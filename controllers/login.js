@@ -13,8 +13,10 @@ registerButton.addEventListener('click', function(event){
     };
     usuarios.push(usuario);
     localStorageSend();
+    window.location.href = './index.html';
     document.getElementById('form').reset();
 });
+
 
 function localStorageSend() {
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
