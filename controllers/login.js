@@ -11,16 +11,14 @@ registerButton.EventListener('click', function(){
         password: userpassword.value,
         register: registerButton,
     }
-
     usuarios.push(usuario);
     localStorage.send();
 })
 
-
+///hola
 function localStoragesend(){
     localStorage.setItem('usuarios',JSON.stringify('usuarios'));
     console.log('Success');
     console.log(localStorage.getItem(usuarios));
-
 }
 
