@@ -1,24 +1,23 @@
 let username = document.getElementById('username');
-let password = document.getElementById('password');
+let password = document.getElementById('passwords');
 let registerButton = document.getElementById('registerButton');
 
 let usuarios = [];
 
-registerButton.EventListener('click', function(){
-    Event.preventDefault();
+registerButton.addEventListener('click', function(event){
+    event.preventDefault();
     let usuario = {
         name: username.value,
-        password: userpassword.value,
-        register: registerButton,
-    }
+        password: password.value,
+        
+    };
     usuarios.push(usuario);
-    localStorage.send();
-})
+    localStorageSend();
+    document.getElementById('form').reset();
+});
 
-///hola
-function localStoragesend(){
-    localStorage.setItem('usuarios',JSON.stringify('usuarios'));
+function localStorageSend() {
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
     console.log('Success');
-    console.log(localStorage.getItem(usuarios));
+    console.log(localStorage.getItem('usuarios'));
 }
-

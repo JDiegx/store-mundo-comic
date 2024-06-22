@@ -15,7 +15,7 @@
     </header>
     <div class="general-container-form">
             <div class="container-form">
-                <form action="" class="form">
+                <form action="" class="form" id="form">
                     <div class="form__container-welcome">
                         <p class="form__hello">Hello!</p>
                         <p class="form__please" >Please enter your username and password to access.</p>
@@ -23,14 +23,14 @@
                     <div class="form__container-data">
                         <div class="form__input">
                             <label for="" class="form__input-label">User: </label>
-                            <input type="text" id="username" class="form__input-input">
+                            <input type="text" id="username" class="form__input-input" required>
                         </div>
                         <div class="form__input">
                             <label for="" class="form__input-label">Passwords: </label>
-                            <input type="text" id="passwords" class="form__input-input">
+                            <input type="text" id="passwords" class="form__input-input" required>
                         </div>
                     </div>
-                    <button class="form__button-login" type="submit">Login</button>
+                    <button class="form__button-login" type="submit" id="registerButton">Login</button>
                 </form>
             </div>
         </div>
@@ -46,6 +46,6 @@
             </ul>
         </nav>
     </footer>
-    <script src=""></script>
+    <script src="./controllers/login.js"></script>
 </body>
 </html>
