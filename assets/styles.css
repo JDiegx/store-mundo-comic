@@ -53,7 +53,7 @@ table {
 .header{
     width: 100%;
     height: 100px;
-    background-color: rgb(237, 237, 237);
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,12 +68,23 @@ table {
 }
 
 .container-logo__logo{
-    width: 150px;
+    width: 280px;
+}
+
+.general-container-form{
+    width: 100%;
+    height: 650px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-image: url(./img/marvel-superhero-8z8qnac9a48liakb.jpg);
+    background-size: cover;
 }
 
 .container-form{
-    width: 100%;
-    height: 650px;
+    width: 640px;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,13 +93,21 @@ table {
 .form{
     width: 500px;
     height: 500px;
-    background-color: #ED1D24;
-    color: white;
+    background-color: #c0c0c03b;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     border-radius: 30px;
+}
+
+.form__container-welcome{
+    width: 90%;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .form__hello{
@@ -98,24 +117,34 @@ table {
     font-weight: 700;
 }
 
-.form__input{
+
+.form__container-data{
     width: 90%;
-    height: 70px;
+    height: 200px;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
+.form__input{
+    width: 370px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .form__input-label{
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .form__input-input{
-    width: 250px;
     height: 45px;
-    border-radius: 20px;
     border: none;
+    border-radius: 10px;
     padding: 0px 20px;
+    font-size: 18px;
 }
 
 .form__button-login{
@@ -123,8 +152,39 @@ table {
     height: 50px;
     border-radius: 15px;
     border: none;
-    background-color: white;
-    color: red;
+    background-color: #ED1D24;
+    color: rgb(255, 255, 255);
     font-size: 20px;
     font-weight: 700;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+}
+
+.form__button-login:hover{
+    background-color: #ed1d249a;
+}
+
+.footer{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container-list{
+    width: 80%;
+}
+
+.container-lisl__list{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.list__item{
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
 }
