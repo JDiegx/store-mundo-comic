@@ -92,7 +92,7 @@ table {
 
 .form{
     width: 500px;
-    height: 500px;
+    height: 520px;
     background-color: #c0c0c03b;
     display: flex;
     flex-direction: column;
@@ -120,7 +120,7 @@ table {
 
 .form__container-data{
     width: 90%;
-    height: 200px;
+    height: 220px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

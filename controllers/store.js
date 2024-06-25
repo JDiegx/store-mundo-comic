@@ -33,5 +33,4 @@ buttonEnviar.addEventListener('click', function(event) {
 function localStorageSend(){
 localStorage.setItem('products',JSON.stringify(products));
         alert("¡Su compra fue exitosa, gracias por preferirnos!");
-
 }
