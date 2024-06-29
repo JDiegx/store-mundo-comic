@@ -1,25 +1,48 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const productDetails = document.getElementById('productDetails');
 
-    // Cargar productos guardados al cargar la página
-    const savedProducts = localStorage.getItem('products');
-    if (savedProducts) {
-        const products = JSON.parse(savedProducts);
-        const product = products[products.length - 1]; // Mostrar el último producto agregado
 
-        if (product) {
-            productDetails.innerHTML = `
-                <p><strong>Nombre del Producto:</strong> ${product.name}</p>
-                <p><strong>Precio:</strong> $${product.price}</p>
-                <p><strong>Descripción:</strong> ${product.description}</p>
-                <p><strong>Foto del Producto:</strong></p>
-                <img src="${product.photo}" alt="${product.name}" class="product-image">
-                <p><strong>Depósito:</strong> ${product.depotView}</p>
-            `;
-        } else {
-            productDetails.innerHTML = `<p>No hay detalles del producto guardados.</p>`;
-        }
-    } else {
-        productDetails.innerHTML = `<p>No hay productos guardados.</p>`;
-    }
-});
+const listComponents = document.getElementById('listComponents');
+
+function localStorageBring() {
+    const savedProducts = JSON.parse(localStorage.getItem('products'));
+
+    savedProducts.forEach(function(product) {
+        console.log(product);
+
+        const productComponent = document.createElement('div');
+        productComponent.classList = "list-components__product";
+        listComponents.appendChild(productComponent);
+
+        const productImage = document.createElement('div');
+        productImage.classList = "product__product-image";
+        productComponent.appendChild(productImage);
+
+        const image = document.createElement('img');
+        image.classList = "product-image__image";
+        image.src = product.photo;
+        productImage.appendChild(image);
+
+        const productDescription = document.createElement('div');
+        productDescription.classList = "product__product-description";
+        productComponent.appendChild(productDescription);
+
+        const productDescriptionTittle = document.createElement('h1');
+        productDescriptionTittle.classList = "product-description__tittle";
+        productDescriptionTittle.innerText = product.name;
+        productDescription.appendChild(productDescriptionTittle);
+
+        const description = document.createElement("p");
+        description.classList = "product-description__description";
+        description.innerText = product.description;
+        productDescription.appendChild(description);    
+
+        const productPrice = document.createElement("p");
+        productPrice.classList = "product-description__price";
+        productPrice.innerHTML = "$ " +  product.price;
+        productDescription.appendChild(productPrice);
+
+    });
+}
+
+
+
+localStorageBring();

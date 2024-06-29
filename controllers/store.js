@@ -4,17 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const price = document.getElementById('price');
     const description = document.getElementById('description');
     const photo = document.getElementById('photo');
-    const depotView = document.getElementById('depot');
     const buttonEnviar = document.getElementById('buttonEnviar');
     const productForm = document.getElementById('productForm');
-
     let products = [];
-
     // Obtener usuario de localStorage
     const storedUser = JSON.parse(localStorage.getItem('user'));
-
     if (storedUser && storedUser.username) {
-        welcomeElement.textContent = `Hola!, ${storedUser.username}`;
+        welcomeElement.textContent = `Hola ${storedUser.username}!`;
     } else {
         Swal.fire({
             icon: 'warning',
@@ -24,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'login.html';
         });
     }
-
     // Cargar productos guardados al cargar la página
     window.addEventListener('load', function() {
         const savedProducts = localStorage.getItem('products');
@@ -32,12 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
             products = JSON.parse(savedProducts);
         }
     });
-
     // Manejo del envío del formulario
     if (productForm) {
         productForm.addEventListener('submit', function(event) {
             event.preventDefault();
-
             const reader = new FileReader();
             reader.onload = function(event) {
                 const product = {
@@ -45,18 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     price: price.value,
                     description: description.value,
                     photo: event.target.result, // Aquí se obtiene el Base64 de la imagen
-                    depotView: depotView.value
                 };
-
                 products.push(product);
                 localStorageSend();
                 window.location.href = 'view.html';
             };
-
             reader.readAsDataURL(photo.files[0]);
         });
     }
-
     // Función para guardar productos en localStorage
     function localStorageSend() {
         localStorage.setItem('products', JSON.stringify(products));

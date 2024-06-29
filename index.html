@@ -8,24 +8,33 @@
     <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
-    <div>
-        <h1 id="welcome">Hola!, </h1>
+    <header class="header">
+        <div class="header__container-logo">
+            <img src="./assets/img/marvel_studios_png_logo__v1__0001_by_tahfimism01_deoe0ws-fullview.png" alt="" class="container-logo__logo">
+        </div>
+        <div>
+            <a href="./login.html"><button>salir</button></a>
+        </div>
+    </header>
+    <div class="container-welcome">
+        <h1 class="container-welcome__welcome" id="welcome">Hola</h1>
     </div>
-    <div class="form-container">
-        <h2>Product Form</h2>
-        <form id="productForm">
-            <label for="name">Product Name</label>
-            <input type="text" id="name" name="name">
-            <label for="price">Price</label>
-            <input type="number" id="price" name="price">
-            <label for="description">Description</label>
-            <textarea id="description" name="description" rows="4"></textarea>
-            <label for="photo">Product Photo</label>
-            <input type="file" id="photo" name="photo" accept="image/*">
-            <label for="depot">Depot</label>
-            <input type="text" id="depot" name="depot">
-            <button type="submit" id="buttonEnviar">Submit</button>
-        </form>
+    <div class="container-form-products">
+        <div class="form-container">
+            <h2>Product Form</h2>
+            <form id="productForm">
+                <label for="name">Product Name</label>
+                <input type="text" id="name" name="name">
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="4"></textarea>
+                <label for="photo">Product Photo</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+                <button type="submit" id="buttonEnviar">Submit</button>
+            </form>
+        </div>
+        <a href="./view.html"><button>View Depot</button></a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="./controllers/store.js"></script>
